@@ -1,6 +1,9 @@
 workflow "Az Login" {
   on = "pull_request"
-  resolves = ["Azure CLI"]
+  resolves = [
+    "Azure CLI",
+    "Azure/github-actions/web-app-container@master",
+  ]
 }
 
 action "Azure Login" {
@@ -18,4 +21,9 @@ action "Azure CLI" {
   env = {
     AZURE_SCRIPT = "az aks list \necho hell-world\naz account list"
   }
+}
+
+action "Azure/github-actions/web-app-container@master" {
+  uses = "Azure/github-actions/web-app-container@master"
+  needs = ["Azure Login"]
 }
