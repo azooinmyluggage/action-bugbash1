@@ -23,11 +23,11 @@ action "Azure CLI" {
   }
 }
 
-action "Azure/github-actions/web-app-container@master" {
+action "Container Web App" {
   uses = "Azure/github-actions/web-app-container@master"
   needs = ["Azure Login"]
   env = {
     AZURE_APP_NAME = "desattir"
-    CONTAINER_IMAGE_NAME = "desattiracr"
+    CONTAINER_IMAGE_NAME = "desattiracr.azurecr.io/desattiracr:279"
   }
 }
