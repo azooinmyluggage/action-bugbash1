@@ -2,7 +2,7 @@ workflow "Az Login" {
   on = "pull_request"
   resolves = [
     "Azure CLI",
-    "Azure/github-actions/web-app-container@master",
+    "Container Web App",
   ]
 }
 
