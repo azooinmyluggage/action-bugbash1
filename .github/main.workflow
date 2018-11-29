@@ -25,3 +25,4 @@ action "Deploy to Web App" {
     AZURE_APP_NAME = "nibansalapp"
     AZURE_APP_PACKAGE_LOCATION = "dotnetpackage/"
   }
+}
