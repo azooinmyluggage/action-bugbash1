@@ -1,4 +1,4 @@
-workflow "New workflow" {
+workflow "Sachinma workflow" {
   on = "pull_request"
   resolves = ["Azure CLI"]
 }
