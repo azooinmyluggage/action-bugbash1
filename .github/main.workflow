@@ -20,6 +20,7 @@ action "Azure CLI" {
   needs = ["Azure Login"]
   env = {
     AZURE_SCRIPT = "az aks list \necho hell-world\naz account list"
+    AZURE_SCRIPT_PATH = "./azcli.sh"
   }
 }
 
