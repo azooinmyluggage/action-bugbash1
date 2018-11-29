@@ -15,12 +15,19 @@ action "Azure Login" {
   }
 }
 
-action "Azure CLI" {
+action "Azure CLI 2" {
   uses = "Azure/github-actions/azure-cli@master"
   needs = ["Azure Login"]
   env = {
-    AZURE_SCRIPT = "az aks list \necho hell-world\naz account list"
-    AZURE_SCRIPT_PATH = "./azcli.sh"
+    AZURE_SCRIPT = "mkdir /output"
+  }
+}
+
+action "Azure CLI" {
+  uses = "Azure/github-actions/azure-cli@master"
+  needs = ["Azure CLI 2"]
+  env = {
+    AZURE_SCRIPT = "ls /"
   }
 }
 
