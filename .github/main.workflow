@@ -22,7 +22,7 @@ action "Deploy to Web App" {
   uses = "Azure/github-actions/web-app-deploy@master"
   needs = ["Azure Login"]
   env = {
-    AZURE_APP_NAME = "nibansalapp"
+    AZURE_APP_NAME = "vincaapp"
     AZURE_APP_PACKAGE_LOCATION = "dotnetpackage/"
   }
 }
