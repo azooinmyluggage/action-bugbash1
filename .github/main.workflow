@@ -1,4 +1,4 @@
-workflow "New workflow" {
+workflow "Az Login" {
   on = "pull_request"
   resolves = ["Azure CLI"]
 }
@@ -12,11 +12,11 @@ action "Azure Login" {
   }
 }
 
- action "Azure CLI" {
+action "Azure CLI" {
   uses = "Azure/github-actions/cli@master"
   env = {
     AZURE_SCRIPT_PATH = "<Relative path in your repository>"
     AZURE_SCRIPT = "az account list"
   }
-   needs = ["Azure Login"]
+  needs = ["Azure Login"]
 }
