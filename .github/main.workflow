@@ -14,8 +14,8 @@ action "Azure Login" {
 
 action "Azure CLI" {
   uses = "Azure/github-actions/azure-cli@master"
-  env = {
-    AZURE_SCRIPT = "az aks list; echo hell-world; az account list"
-  }
   needs = ["Azure Login"]
+  env = {
+    AZURE_SCRIPT = "az aks list \necho hell-world\naz account list"
+  }
 }
