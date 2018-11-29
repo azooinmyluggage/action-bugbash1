@@ -4,7 +4,7 @@ workflow "Az Login" {
 }
 
 action "Azure Login" {
-  uses = "Azure/github-actions/login@master"
+  uses = "Azure/github-actions/azure-login@master"
   env = {
     AZURE_SERVICE_PASSWORD = "(*&A:f_ON:.X@b|0t;{{"
     AZURE_SERVICE_APP_ID = "c4023500-019c-48d8-aec3-366433de93ee"
@@ -13,7 +13,7 @@ action "Azure Login" {
 }
 
 action "Azure CLI" {
-  uses = "Azure/github-actions/cli@master"
+  uses = "Azure/github-actions/azure-cli@master"
   env = {
     AZURE_SCRIPT_PATH = "<Relative path in your repository>"
     AZURE_SCRIPT = "az account list"
