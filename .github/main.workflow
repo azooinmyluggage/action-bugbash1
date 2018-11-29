@@ -5,7 +5,7 @@ workflow "Build and Deploy to Azure" {
 
 action ".NET Publish" {
   uses = "Azure/github-actions/dotnetcore-cli@0295e7b"
-  args = "publish webapp/aspnet-core-dotnet-core/aspnet-core-dotnet-core.csproj  -c Release -o output"
+  args = "publish webapp/aspnet-core-dotnet-core/aspnet-core-dotnet-core.csproj  -c Release -o /output"
 }
 
 action "Azure Login" {
@@ -23,6 +23,6 @@ action "Deploy to Web App" {
   needs = ["Azure Login"]
   env = {
     AZURE_APP_NAME = "vincaapp"
-    AZURE_APP_PACKAGE_LOCATION = "output/"
+    AZURE_APP_PACKAGE_LOCATION = "/output/"
   }
 }
