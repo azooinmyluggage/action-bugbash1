@@ -1,8 +1,8 @@
-workflow "Sachin's New workflow" {
+workflow "Sachin- New workflow" {
   on = "push"
   resolves = ["Login"]
 }
 
 action "Login" {
-  uses = "azure/github-actions/azure-login@master"
+  uses = "Azure/github-actions/azure-login@master"
 }
