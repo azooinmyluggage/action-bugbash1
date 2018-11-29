@@ -19,7 +19,7 @@ action "Azure CLI 2" {
   uses = "Azure/github-actions/azure-cli@master"
   needs = ["Azure Login"]
   env = {
-    AZURE_SCRIPT = "mkdir /output"
+    AZURE_SCRIPT = "mkdir /output; ls /"
   }
 }
 
